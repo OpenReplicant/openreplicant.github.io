@@ -1,4 +1,6 @@
-<nav x-data="{ open: false }" class="navbar" aria-label="Main navigation">
+---
+---
+<nav class="navbar" client:load aria-label="Main navigation">
   <div class="navbar__brand">
     <a href="/">Open Replicant</a>
   </div>
@@ -14,3 +16,7 @@
     <li><a href="/about/">About</a></li>
   </ul>
 </nav>
+
+<style>
+  /* Navbar styles are also in global.css; this keeps the component self-documenting. */
+</style>

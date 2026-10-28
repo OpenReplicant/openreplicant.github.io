@@ -1,16 +1,15 @@
 {
-  "type": "module",
   "name": "website-openreplicant",
   "version": "0.1.0",
-  "description": "Open Replicant website — Alpine.js islands, partials, GitHub Pages",
+  "description": "Open Replicant website — Astro static site with Alpine.js islands, deployed to GitHub Pages",
   "private": true,
   "scripts": {
-    "build": "node src/scripts/build.js",
-    "dev": "node src/scripts/build.js --watch",
-    "preview": "npx serve dist"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
-  "devDependencies": {
-    "alpinejs": "^3.14.0",
-    "chokidar": "^3.6.0"
+  "dependencies": {
+    "astro": "^4.16.0",
+    "alpinejs": "^3.14.0"
   }
 }

@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Home | Open Replicant">
+  <section class="hero">
+    <h1>Open Replicant</h1>
+    <p>
+      A static site built with Astro partials and Alpine.js islands, deployed
+      to GitHub Pages.
+    </p>
+  </section>
+  <section class="island-demo" x-data="{ count: 0 }" client:load>
+    <h2>Island counter</h2>
+    <p x-text="count"></p>
+    <button @click="count++" class="btn">Increment</button>
+  </section>
+</BaseLayout>
