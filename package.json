@@ -1,0 +1,16 @@
+{
+  "type": "module",
+  "name": "website-openreplicant",
+  "version": "0.1.0",
+  "description": "Open Replicant website — Alpine.js islands, partials, GitHub Pages",
+  "private": true,
+  "scripts": {
+    "build": "node src/scripts/build.js",
+    "dev": "node src/scripts/build.js --watch",
+    "preview": "npx serve dist"
+  },
+  "devDependencies": {
+    "alpinejs": "^3.14.0",
+    "chokidar": "^3.6.0"
+  }
+}

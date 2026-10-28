@@ -1,0 +1,16 @@
+<nav x-data="{ open: false }" class="navbar" aria-label="Main navigation">
+  <div class="navbar__brand">
+    <a href="/">Open Replicant</a>
+  </div>
+  <button
+    @click="open = !open"
+    :aria-expanded="open"
+    class="navbar__toggle"
+  >
+    Menu
+  </button>
+  <ul :class="{ 'navbar__list': true, 'navbar__list--open': open }">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about/">About</a></li>
+  </ul>
+</nav>

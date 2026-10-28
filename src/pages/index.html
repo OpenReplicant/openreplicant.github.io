@@ -1,0 +1,18 @@
+---
+title: Home | Open Replicant
+---
+
+{{ component "nav" }}
+
+<main class="page">
+  <section class="hero">
+    <h1>Open Replicant</h1>
+    <p>A personal site built with Alpine.js islands and partials, deployed to GitHub Pages.</p>
+  </section>
+  <section class="island-demo" x-data="{ count: 0 }">
+    <h2>Island counter</h2>
+    <p x-text="count"></p>
+    <button @click="count++" class="btn">Increment</button>
+  </section>
+{{ component "footer" }}
+</main>
