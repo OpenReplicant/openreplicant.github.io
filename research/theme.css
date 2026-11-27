@@ -1,0 +1,29 @@
+/* OpenReplicant's colours for the research site (the main site's src/styles/global.css). The main site is dark
+   only, so dark is the default here too, whatever the OS asks for; the theme button still offers light. */
+:root:not([data-theme="light"]) {
+  color-scheme: dark;
+  --bg: #0a0a0f;
+  --panel: #111118;
+  --panel-2: #161620;
+  --border: #2a2a3a;
+  --text: #e8e8f0;
+  --muted: #9a9ab0;
+  --accent: #00f2ff;
+  --accent-2: #d25cff;
+  --accent-soft: rgba(0, 242, 255, 0.08);
+  --ring: #00f2ff;
+  --good: #6ee39a;
+  --good-bg: rgba(110, 227, 154, 0.1);
+  --bad: #ff7aa8;
+  --bad-bg: rgba(255, 122, 168, 0.1);
+  --pred: #5fd8f5;
+  --pred-bg: rgba(95, 216, 245, 0.1);
+  --idle: #b4b4c6;
+  --idle-bg: rgba(180, 180, 198, 0.1);
+  --warn: #f3c46b;
+  --warn-bg: rgba(243, 196, 107, 0.1);
+  --ours: #d9a3ff;
+  --ours-bg: rgba(217, 163, 255, 0.1);
+  --grid: rgba(0, 242, 255, 0.035);
+}
+.brand-logo { width: 22px; height: 22px; vertical-align: middle; }
