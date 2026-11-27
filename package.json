@@ -3,14 +3,19 @@
   "version": "0.1.0",
   "description": "Open Replicant website — open source AI product, consulting, and SaaS",
   "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "build:research": "sh research/build.sh dist/research"
   },
   "dependencies": {
-    "astro": "^4.16.0",
-    "alpinejs": "^3.14.0",
-    "@astrojs/alpinejs": "^0.4.9"
+    "@astrojs/alpinejs": "1.0.0",
+    "alpinejs": "3.17.5",
+    "astro": "7.4.11"
   }
 }
