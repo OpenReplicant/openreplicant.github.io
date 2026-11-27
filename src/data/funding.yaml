@@ -1,0 +1,10 @@
+# Money earmarked per direction id. Edit by hand when a payment arrives.
+# pledged: promised, not yet paid. received: paid. source: provider and reference only (no names, no emails).
+# Nothing has been received yet; these are all zero.
+wtq-fixed-operations: { pledged: 0, received: 0, source: "" }
+pd-program-beats-ppo: { pledged: 0, received: 0, source: "" }
+tabular-gate: { pledged: 0, received: 0, source: "" }
+online-gate-soar: { pledged: 0, received: 0, source: "" }
+haiku-opus-cascade: { pledged: 0, received: 0, source: "" }
+retrieval-transfers: { pledged: 0, received: 0, source: "" }
+tableroute-wikitq: { pledged: 0, received: 0, source: "" }

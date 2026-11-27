@@ -1,0 +1,14 @@
+id: retrieval-transfers
+title: Do the outcomes of the nearest cases predict a case's own?
+status: proposed
+hours: 3
+claims: [E-06]
+question: >-
+  Given a case base, do the outcomes of a state's nearest cases predict the outcome of the state itself?
+why: >-
+  Everything built on remembered cases assumes it does. It is cheap to check and nothing else should rest on it
+  before it has been.
+falsifier: >-
+  The prediction is no better than the base rate.
+plan: >-
+  Use an existing case base from E-01 or E-04, and publish the result with the base rate beside it.

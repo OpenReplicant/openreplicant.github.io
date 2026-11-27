@@ -1,0 +1,15 @@
+id: tableroute-wikitq
+title: Does a table router's reported gain hold on WikiTableQuestions?
+status: ready-to-plan
+hours: 16
+claims: [tableroute-wikitq-gain]
+question: >-
+  A paper reports that routing table questions between methods gains accuracy on WikiTableQuestions. On our setup,
+  with our models, does the gain appear?
+why: >-
+  It would show whether routing by question and table is worth building into the ladder, or whether the reported
+  gain depends on conditions we do not share. The research agent ranks it from the claims it has read.
+falsifier: >-
+  The router's accuracy is not above the best single method on held-out cases beyond the bootstrap 95% interval.
+plan: >-
+  Written by the research agent when the claim reaches the top of the queue.

@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Rules from './_rules.astro';
+import { directions, rate, sponsorsUrl } from '../../data/funds';
+export function getStaticPaths() {
+  return directions().map((d) => ({ params: { id: d.id }, props: { d } }));
+}
+const { d } = Astro.props;
+const link = `${sponsorsUrl}?direction=${d.id}`;
+---
+<BaseLayout title={`${d.title} | Fund a direction | Open Replicant`}>
+  <section class="section narrow prose">
+    <p class="small"><a href="/fund/">All directions</a> · status: {d.status} · tracked as {d.claims.join(', ')}</p>
+    <h1>{d.title}</h1>
+
+    <div class="meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={d.pct} aria-label={`Funded: ${d.pct}%`}>
+      <span style={`width:${d.pct}%`}></span>
+    </div>
+    <p class="small">
+      ${d.pledged + d.received} of ${d.cost} ({d.pct}%){d.ready ? ', fully funded: it runs next' : ''}.
+      Cost: {d.hours} planned hours × <span class="tbd">${rate}/hour placeholder</span>.
+    </p>
+    <div class="btn-row" style="justify-content: flex-start;">
+      <a href={link} class="btn btn--large">Fund this direction</a>
+      <a href={`#TBD-open-collective?direction=${d.id}`} class="btn btn--outline btn--large">Via Open Collective</a>
+    </div>
+    <p class="small"><span class="tbd">Links TBD</span> The id <code>{d.id}</code> goes with the link so we can earmark your payment.</p>
+
+    <h2>The question</h2><p>{d.question}</p>
+    <h2>Why it matters</h2><p>{d.why}</p>
+    <h2>What would prove it wrong</h2><p>{d.falsifier}</p>
+    <h2>The plan</h2><p>{d.plan}</p>
+    <p>You fund a test; you get the result either way, including a refutation. We promise the test, not the outcome.</p>
+  </section>
+  <Rules />
+</BaseLayout>
+
+<style>
+  .meter { height: 0.6rem; border-radius: 0.3rem; background: rgba(255,255,255,0.12); overflow: hidden; margin: 0.75rem 0 0.4rem; }
+  .meter span { display: block; height: 100%; background: var(--cp-accent, #6ee7b7); }
+  .small { color: var(--cp-muted); font-size: 0.9rem; line-height: 1.5; }
+</style>

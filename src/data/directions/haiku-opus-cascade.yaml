@@ -1,0 +1,16 @@
+id: haiku-opus-cascade
+title: Haiku first, Opus only when triggered
+status: registered
+hours: 10
+claims: [E-16]
+question: >-
+  Does a cheap model that escalates to a stronger one on outcome triggers match the stronger model used throughout,
+  on success, for a fraction of the cost?
+why: >-
+  It is the simplest version of an agent that spends large-model calls only where it needs them, and it can be
+  measured with the gateway's meter on recorded tasks.
+falsifier: >-
+  Success is significantly lower than the strong model throughout on the same recorded tasks, or cost per task from
+  the meter is not lower.
+plan: >-
+  Assemble a set of recorded tasks with their own checks, run both arms, and report cost from the gateway's log.

@@ -1,0 +1,17 @@
+id: tabular-gate
+title: Is a tabular foundation model a better gate for when to escalate?
+status: registered
+hours: 4
+claims: [E-04c]
+question: >-
+  When a cheap model answers and a larger one could, a gate decides which cases to send up. Does an untuned tabular
+  foundation model (TabICL or TabPFN) make a better gate than logistic regression, and does an embedding of the
+  question add information the cheap model's own outputs lack?
+why: >-
+  Every escalation in the architecture is a gate. E-04b showed a learned front did no better than the cheap model's
+  own confidence; this asks whether a stronger learner changes that.
+falsifier: >-
+  The gate is not above logistic regression beyond the bootstrap 95% interval at matched escalation rates, or the
+  embedding adds nothing.
+plan: >-
+  Run on the 1,400 cases already read in E-04a. No new model calls.

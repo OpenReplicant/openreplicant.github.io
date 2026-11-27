@@ -1,0 +1,16 @@
+id: pd-program-beats-ppo
+title: Does a program revised against scores beat the large model per case?
+status: ready-to-plan
+hours: 1
+claims: [pd-program-beats-ppo]
+question: >-
+  A paper reports that a program an agent revises against its scores beats a reinforcement-learned policy. Does the
+  claim carry over to our handlers: a program revised against scores, written by a small local model, beating the
+  large model on cost per case at no loss of accuracy?
+why: >-
+  It is the top rung of the handler ladder. The paper's teachers are frontier models and its scores come from an
+  environment; ours are small and are agreement with a large model, so the transfer is a real question.
+falsifier: >-
+  On held-out cases, the revised program is less accurate than the large model, or not cheaper per case.
+plan: >-
+  No new trial. E-18 is the test on our setup, so the cost is recording its outcome against the claim.
