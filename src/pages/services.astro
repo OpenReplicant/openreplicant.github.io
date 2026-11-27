@@ -1,73 +1,257 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+// PLACEHOLDER: the address below is the one the site already used; set the real one before launch.
+const contact = 'mailto:services@openreplicant.example?subject=Mapping%20and%20optimisation%20engagement';
+const fernhillReport = 'https://github.com/OpenReplicant/Morphogen/blob/main/demos/fernhill/engagement/report.md';
+const fernhillDemo = 'https://github.com/OpenReplicant/Morphogen/tree/main/demos/fernhill';
 ---
 
 <BaseLayout title="Services | Open Replicant">
   <section class="hero">
+    <div class="splash">
+      <div class="orb orb--a" aria-hidden="true"></div>
+      <div class="orb orb--b" aria-hidden="true"></div>
+    </div>
     <div class="hero__content">
-      <h1>Consulting &amp; implementation</h1>
+      <span class="badge badge--open-source">For small and medium businesses</span>
+      <h1>Find where the margin goes</h1>
       <p class="hero__tagline">
-        We help teams adopt and deploy Morphogen in production. From system
-        mapping and knowledge-kernel setup through rollout and ongoing support,
-        we make self-managing infrastructure work for your business.
+        We map your business and its systems from your own documents, data and
+        people, find the opportunities to do better, and write each one up as an
+        implementation project with a target and a measure. Then we check the
+        result against that measure, with a judge nobody on the project can tune.
       </p>
+      <div class="btn-row">
+        <a href={contact} class="btn btn--large">Talk to us</a>
+        <a href="#sample" class="btn btn--outline btn--large">Read a sample report</a>
+      </div>
     </div>
   </section>
 
   <section class="section">
-    <h2>What we offer</h2>
+    <h2>What you get</h2>
     <div class="grid">
       <article class="card">
         <span class="card__accent" aria-hidden="true"></span>
-        <h3>AI strategy &amp; adoption</h3>
+        <h3>A map</h3>
         <p>
-          Assess where Morphogen fits in your infrastructure. Define which
-          systems to describe first. Build a rollout plan tailored to your
-          team's review lane and risk tolerance.
+          Your firm as plain files: teams, the steps a job goes through, the
+          tools behind them and what is handed between them. Every claim cites
+          the document line or interview quote it rests on, so you can check it.
         </p>
       </article>
       <article class="card">
         <span class="card__accent" aria-hidden="true"></span>
-        <h3>System mapping</h3>
+        <h3>An opportunity report</h3>
         <p>
-          We run the design agent with you — an interview becomes a system map,
-          gaps become questions, and a complete map becomes a deployable compose
-          file you approve before anything runs.
+          The numbers that matter, computed from your data by a script you can
+          rerun: where money, time or customers are lost, and which stated
+          beliefs the data does not bear out.
         </p>
       </article>
       <article class="card">
         <span class="card__accent" aria-hidden="true"></span>
-        <h3>Implementation</h3>
+        <h3>Implementation projects</h3>
         <p>
-          We deploy and configure Morphogen on your infrastructure, integrate it
-          with your systems, and hand it over ready to run — governed, with
-          people in the loop.
+          Each opportunity written up as a project: what changes, the target and
+          how it is measured, what it is worth, the options compared, cost, risk,
+          and what must not change.
         </p>
       </article>
       <article class="card">
         <span class="card__accent" aria-hidden="true"></span>
-        <h3>Training &amp; enablement</h3>
+        <h3>Judged results</h3>
         <p>
-          Hands-on workshops so your engineers can operate, extend, and maintain
-          Morphogen — writing providers, running the loop, and reviewing plans
-          in the UI.
-        </p>
-      </article>
-      <article class="card">
-        <span class="card__accent" aria-hidden="true"></span>
-        <h3>Production support</h3>
-        <p>
-          Ongoing support and maintenance for teams running Morphogen in
-          production, including upgrades, incident response, and contract
-          conformance against the kernel's 70+ test cases.
+          Where a change can be tested, Morphogen tests it on cases it was not
+          tuned on and records a pass or fail in an evidence log. You see the
+          verdict, not just our opinion of it.
         </p>
       </article>
     </div>
   </section>
 
+  <section class="section narrow">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li>
+        <strong>A first call.</strong> What the business does, what worries you,
+        and what must not change: the margin you hold, the tools your people
+        will actually use, the budget, the payback you need.
+      </li>
+      <li>
+        <strong>Your material.</strong> The documents you already have (handbook,
+        price sheets, job or order exports, a systems list) and an interview
+        with whoever runs the place. Access to systems only where you grant it.
+      </li>
+      <li>
+        <strong>The map and the baselines.</strong> We map the firm with
+        Morphogen's kit, tie every claim to its source, and compute the
+        baselines from your data with scripts you keep.
+      </li>
+      <li>
+        <strong>Options, researched.</strong> For each part worth changing we
+        catalogue the alternatives (tools, settings, ways of working) with what
+        their vendors actually say, quoted, and what still needs a trial.
+      </li>
+      <li>
+        <strong>Judged where it can be.</strong> A spreadsheet formula, a
+        setting, a rule or a prompt can become a Morphogen cell: searched for a
+        better version, then judged on held-out cases it never saw.
+      </li>
+      <li>
+        <strong>The report.</strong> Projects in the order we would do them,
+        each with a target and a measure. You decide what goes ahead; we can
+        carry projects out with you and judge the result against its target.
+      </li>
+    </ol>
+  </section>
+
   <section class="section">
+    <h2>What makes it different</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>A judge the work can't game</h3>
+        <p>
+          The rules are fixed before the search starts, the measurements are
+          taken outside the thing being changed, and the test cases are held
+          back from whoever is optimising. No judge is perfect; this one only
+          gets stricter, and every verdict goes into a log that cannot be
+          quietly edited.
+        </p>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Measured outcomes</h3>
+        <p>
+          Every project has a number to move and the place that number comes
+          from (your job sheet, your accounts, your timesheets). If it does not
+          move, you will see that too.
+        </p>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Open source</h3>
+        <p>
+          Morphogen is Apache-2.0 and on GitHub. The map, the scripts and the
+          evidence are files you keep. Anyone can rerun the numbers, and you can
+          carry on without us.
+        </p>
+        <a href="https://github.com/OpenReplicant/Morphogen" class="btn btn--ghost">Morphogen on GitHub</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section narrow" id="sample">
+    <h2>A sample report: Fernhill Kitchens</h2>
+    <p class="lede">
+      Fernhill is a made-up 11-person kitchen firm; its documents, job sheet and
+      interview were written for the demo. The method, the measurements and the
+      verdict are real runs of Morphogen on that material.
+    </p>
+    <blockquote class="excerpt">
+      “The firm quotes 35% on cost and gets 16%. The quote calculator's costs
+      are too low on every one of the 50 completed jobs, by a median 14%,
+      because its constants date from March 2023. That is about
+      <strong>£84,000 of margin over those 50 jobs, about £53,000 a year</strong>.
+      Corrected constants, found by search and checked on 19 jobs held back
+      from that search, bring the calculator's error from 12.4% to 3.4%.”
+    </blockquote>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Project</th><th>Target and measure</th><th>Status in the demo</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1. A quote calculator that knows what jobs cost</td>
+            <td>Cost within 5% of actual on completed jobs it was not fitted to</td>
+            <td>Judged: 12.4% to 3.4% error on 19 held-out jobs, pass (7 runs, sign test p = 0.008)</td>
+          </tr>
+          <tr>
+            <td>2. Quotes in three days</td>
+            <td>Median survey-to-quote 3 days (now 9); win rate by days to quote, monthly</td>
+            <td>Proposed; win rate falls from 80% within 5 days to none of 16 at 15 days or more</td>
+          </tr>
+          <tr>
+            <td>3. A schedule the fitters can see</td>
+            <td>Late fitting starts under 20% (now 48%); invoice 2 days after sign-off (now 12.5)</td>
+            <td>Four options catalogued from vendor pages; a trial plan, none measured yet</td>
+          </tr>
+          <tr>
+            <td>4. Fewer remakes</td>
+            <td>Remade cabinets (now 6 of 50 jobs)</td>
+            <td>Smaller, later</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="btn-row" style="margin-top: 2rem;">
+      <a href={fernhillReport} class="btn btn--large">Read the full report</a>
+      <a href={fernhillDemo} class="btn btn--ghost btn--large">See the demo's files</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Engagement shapes</h2>
+    <p class="lede">
+      Prices depend on the size of the firm and how much material there is. We
+      quote a fixed price after the first call.
+    </p>
+    <div class="grid">
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Opportunity scan</h3>
+        <p class="price"><span class="tbd">$TBD</span></p>
+        <ul>
+          <li>The mapping run on what is public about your firm</li>
+          <li>A first list of likely opportunities</li>
+          <li>A call to go through it</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Map and opportunity report</h3>
+        <p class="price"><span class="tbd">$TBD</span></p>
+        <ul>
+          <li>An interview, and your documents and data</li>
+          <li>The map, the baselines and their scripts</li>
+          <li>Options catalogued; one change judged where possible</li>
+          <li>The report, written up as implementation projects</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Implementation project</h3>
+        <p class="price"><span class="tbd">$TBD</span> per project</p>
+        <ul>
+          <li>One project from the report, carried out with you</li>
+          <li>Trials of the options before you choose</li>
+          <li>The result measured against its target</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Ongoing measurement</h3>
+        <p class="price"><span class="tbd">$TBD</span> / month</p>
+        <ul>
+          <li>The baselines rerun on new data, quarterly</li>
+          <li>Drift caught before it costs margin</li>
+          <li>Changes judged before they are used</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section center narrow">
+    <h2>Start with a call</h2>
+    <p class="lede">
+      Tell us what the business does and what you would like to be better.
+      We will say plainly whether we can help.
+    </p>
     <div class="btn-row">
-      <a href="mailto:services@openreplicant.example" class="btn btn--large">Contact us</a>
+      <a href={contact} class="btn btn--large">Email us</a>
     </div>
   </section>
 </BaseLayout>

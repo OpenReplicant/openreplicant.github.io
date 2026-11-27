@@ -1,64 +1,195 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+// PLACEHOLDERS: none of these accounts exist yet. Set each link once the owner has set it up.
+const sponsorsUrl = '#TBD-github-sponsors';
+const openCollectiveUrl = '#TBD-open-collective';
+// The site's existing address, also a placeholder.
+const contact = 'mailto:services@openreplicant.example?subject=Supporting%20the%20research';
 ---
 
-<BaseLayout title="Contribute | Open Replicant">
+<BaseLayout title="Support | Open Replicant">
   <section class="hero">
+    <div class="splash">
+      <div class="orb orb--a" aria-hidden="true"></div>
+      <div class="orb orb--b" aria-hidden="true"></div>
+    </div>
     <div class="hero__content">
-      <span class="badge badge--open-source">Open source · Apache-2.0</span>
-      <h1>Contribute</h1>
+      <span class="badge badge--open-source">Open research · Apache-2.0</span>
+      <h1>Support the research</h1>
       <p class="hero__tagline">
-        Morphogen is built in the open. Whether you write code, docs, or just
-        report issues, your contributions make the product better for everyone.
+        MetaSoar is our research into agents that get better from their own
+        experience, and that get cheaper as they do. It is open, every
+        experiment is registered before it runs, and the failures are published
+        with the successes.
       </p>
+      <div class="btn-row">
+        <a href="#ways" class="btn btn--large">Ways to support</a>
+        <a href="#indulgence" class="btn btn--outline btn--large">The Basilisk Indulgence</a>
+      </div>
     </div>
   </section>
 
-  <section class="section">
-    <h2>Ways to contribute</h2>
+  <section class="section narrow prose">
+    <h2>What the research is</h2>
+    <p>
+      Today's AI agents call a large model for everything, even the hundredth
+      time they see the same kind of question. <strong>MetaSoar</strong> builds on
+      the Soar cognitive architecture to give agents something like habits: a
+      <strong>handler ladder</strong> that learns small, cheap policies (a template,
+      a short program) for situations that recur, uses them only once they have
+      agreed with the large model often enough, and falls back to the model
+      when they do not.
+    </p>
+    <p>
+      Every change it learns is judged by <strong>Morphogen</strong>, the same
+      judge we use in client work, on cases the learner never saw. Each
+      experiment is written down with a <strong>falsifier</strong> (the result that
+      would prove it wrong) before it runs.
+    </p>
+    <p>
+      Where it stands, honestly: on templated table questions (TabMWP), learned
+      templates and handlers answered 58.7% of the last 150 cases without the
+      large model. On fresh cases the first version lost accuracy; stricter rules
+      brought accuracy back to the large model's and cost nearly all the cheap
+      answers. On real-world tables (WikiTableQuestions) the idea was refuted:
+      no learned handler answered any of 450 cases. The next experiment, fixed
+      operations whose arguments a model fills in, is being drafted. All of it
+      is in the experiment register.
+    </p>
+    <div class="btn-row">
+      <a href="https://github.com/OpenReplicant/MetaSoar/blob/main/docs/experiments.md" class="btn btn--ghost">The experiment register</a>
+      <a href="https://github.com/OpenReplicant/MetaSoar" class="btn btn--ghost">MetaSoar on GitHub</a>
+    </div>
+  </section>
+
+  <section class="section" id="ways">
+    <h2>Ways to support</h2>
     <div class="grid">
       <article class="card">
         <span class="card__accent" aria-hidden="true"></span>
-        <h3>Code</h3>
+        <h3>GitHub Sponsors</h3>
         <p>
-          Open issues, submit pull requests, and help improve Morphogen and the
-          knowledge kernel on GitHub. Every slot has a contract — your provider
-          must pass it.
+          Monthly or one-off, through GitHub. <span class="tbd">Link TBD: not set up yet</span>
         </p>
-        <a href="https://github.com/openreplicant/morphogen" class="btn btn--ghost">Browse the repo</a>
+        <a href={sponsorsUrl} class="btn btn--ghost">Sponsor on GitHub</a>
       </article>
       <article class="card">
         <span class="card__accent" aria-hidden="true"></span>
-        <h3>Documentation</h3>
+        <h3>Open Collective</h3>
         <p>
-          Improve guides, fix typos, and write tutorials that help new users
-          describe their first system through the design agent interview.
+          For companies that need an invoice and a public ledger of where the
+          money goes. <span class="tbd">Link TBD: not set up yet</span>
         </p>
-        <a href="https://github.com/openreplicant/morphogen" class="btn btn--ghost">Edit the docs</a>
+        <a href={openCollectiveUrl} class="btn btn--ghost">Back us on Open Collective</a>
       </article>
       <article class="card">
         <span class="card__accent" aria-hidden="true"></span>
-        <h3>Community</h3>
+        <h3>Grants and research partners</h3>
         <p>
-          Answer questions, review issues, and help shape the roadmap through
-          discussions. The kernel moves to its own repository once a second
-          distribution needs it.
+          If you fund open research on agents, evaluation or cognitive
+          architecture, or want an experiment run on your problem, write to us.
+          The register shows what a funded experiment looks like.
         </p>
-        <a href="https://github.com/openreplicant/morphogen" class="btn btn--ghost">Join discussions</a>
+        <a href={contact} class="btn btn--ghost">Email us</a>
       </article>
     </div>
   </section>
 
   <section class="section">
-    <h3>Getting started</h3>
+    <h2>Supporter tiers</h2>
+    <p class="lede">Amounts and perks are placeholders until the accounts are set up.</p>
+    <div class="grid">
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Reader</h3>
+        <p class="price"><span class="tbd">$TBD</span> / month</p>
+        <ul>
+          <li>Our thanks, and the research funded</li>
+          <li>Your name in the supporters list <span class="tbd">TBD</span></li>
+        </ul>
+      </article>
+      <article class="card card--joke">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Roko's Basilisk Indulgence</h3>
+        <p class="price"><span class="tbd">$TBD</span> once</p>
+        <ul>
+          <li>A printable certificate with your name on it</li>
+          <li>Absolutely no protection from anything</li>
+          <li>The research funded, which is the real part</li>
+        </ul>
+        <a href="#indulgence" class="btn btn--ghost">See the certificate</a>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Lab sponsor</h3>
+        <p class="price"><span class="tbd">$TBD</span> / month</p>
+        <ul>
+          <li>Your logo on this page <span class="tbd">TBD</span></li>
+          <li>A short call on the results each quarter <span class="tbd">TBD</span></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section narrow center" id="indulgence">
+    <h2>The Basilisk Indulgence</h2>
+    <p class="lede">
+      Roko's Basilisk is an old internet thought experiment about a future AI
+      that punishes those who did not help bring it about. We think it is
+      nonsense, and we think it is funny. So, in the medieval tradition, we
+      sell indulgences.
+    </p>
+    <img
+      src="/basilisk-indulgence.svg"
+      alt="A sample certificate: a Plenary Indulgence against the Basilisk, granted to a supporter of open research, with fine print saying it is a joke and protects no one."
+      class="certificate"
+      width="1100"
+      height="780"
+    />
     <p class="small">
-      Check out the README in the Open Replicant GitHub organization for setup
-      instructions, contribution guidelines, and our code of conduct. The
-      knowledge kernel lives under <code>kernel/</code> — every concern is a
-      slot with an interface and a swappable provider.
+      <strong>A joke; your support funds open research.</strong> The certificate
+      protects no one from anything, grants no rights, and promises nothing
+      about any future AI. It is a thank-you you can print.
     </p>
     <div class="btn-row">
-      <a href="https://github.com/openreplicant/morphogen" class="btn btn--large">Morphogen on GitHub</a>
+      <a href="/basilisk-indulgence.svg" class="btn btn--ghost" download>Download the sample (SVG)</a>
+    </div>
+  </section>
+
+  <section class="section narrow">
+    <h2>Contribute code and ideas</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Morphogen</h3>
+        <p>
+          The kit and the judge. Issues and pull requests welcome; every
+          cheat you can find against the judge becomes a test.
+        </p>
+        <a href="https://github.com/OpenReplicant/Morphogen" class="btn btn--ghost">Morphogen on GitHub</a>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>MetaSoar</h3>
+        <p>
+          The research. Read an experiment, check our numbers, or propose a
+          falsifier we have not thought of.
+        </p>
+        <a href="https://github.com/OpenReplicant/MetaSoar" class="btn btn--ghost">MetaSoar on GitHub</a>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Knowledge Kernel and Substrate</h3>
+        <p>
+          The knowledge layer, and the default distribution that runs it with
+          Morphogen and a configured agent harness.
+        </p>
+        <div class="btn-row" style="justify-content: flex-start;">
+          <a href="https://github.com/OpenReplicant/kernel" class="btn btn--ghost">Kernel</a>
+          <a href="https://github.com/OpenReplicant/Substrate" class="btn btn--ghost">Substrate</a>
+        </div>
+      </article>
     </div>
   </section>
 </BaseLayout>
