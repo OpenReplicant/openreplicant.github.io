@@ -1,21 +1,22 @@
 # OpenReplicant's research site, served at openreplicant.com/research/. Built by Morphogen's research-site kit
 # (`morphogen site build --config research/site.toml --out dist/research --base /research`; research/build.sh).
-# Every path is relative to this file.
+# Paths are relative to this file (site/README.md, "The config file").
 #
 # The data is not copied here. research/build.sh checks out Morphogen at the commit in research/morphogen.ref into
 # research/morphogen/ (ignored by git), and the site is built from that checkout's demos/research-loop, so the
 # research agent's files have one record, in Morphogen. To update the site, change morphogen.ref.
 
+[site]
 title = "OpenReplicant research"
 description = "What we're researching: claims from papers about parts of our agent, each with conditions, a prediction written before it is tested, and the outcome, refutations included."
 owner = "OpenReplicant"
 # Where steering issues go, and where claim files are linked on GitHub.
 repo = "OpenReplicant/Morphogen"
 branch = "main"
+# The checkout's root, so claim-file links point at Morphogen (found from .git otherwise, which is this repository).
+repo_dir = "morphogen"
 # The System whose status each claim is shown with (an assessment's `system`).
 system = "system:default/metasoar"
-theme = "theme.css"
-logo = "logo.svg"
 
 [sources]
 claims = ["morphogen/demos/research-loop/claims"]
@@ -37,11 +38,11 @@ question = ["research:question"]
 propose-role = ["research:question"]
 propose-option = ["research:question"]
 
-# Links added to the header after the site's own pages. The first leads back to the main site.
-[[nav]]
-text = "openreplicant.com"
-href = "/"
+[theme]
+css = "theme.css"
+logo = "logo.svg"
 
-[[nav]]
-text = "MetaSoar's experiments"
-href = "https://github.com/OpenReplicant/MetaSoar/blob/main/docs/experiments.md"
+[nav]
+# The header's pages, in order. The two external links back to openreplicant.com and to MetaSoar's experiments are
+# not in the kit (it has no external navigation); research/build.sh adds them to the header.
+pages = ["claims", "queue", "predictions", "roles", "map", "notes"]

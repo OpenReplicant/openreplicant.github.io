@@ -26,22 +26,11 @@ fi
 
 cd "$SRC/site"
 npm ci --no-audit --no-fund
+MORPHOGEN_SITE_CONFIG="$HERE/site.toml" MORPHOGEN_SITE_OUT="$OUT" MORPHOGEN_SITE_BASE="$BASE" npm run build
 
-if grep -rqs MORPHOGEN_SITE_CONFIG astro.config.mjs src package.json; then
-  # The site kit (Morphogen's claude/site-kit): the config names everything, paths relative to it.
-  MORPHOGEN_SITE_CONFIG="$HERE/site.toml" MORPHOGEN_SITE_OUT="$OUT" MORPHOGEN_SITE_BASE="$BASE" npm run build
-else
-  # Before the kit (claude/site-ssg): paths are relative to SITE_ROOT, and the look and the extra navigation are not
-  # configurable yet, so the theme is appended to the stylesheet and the links are added to the header afterwards.
-  # Remove this branch once morphogen.ref points at the kit.
-  CFG="$SRC/.openreplicant-site.toml"
-  sed 's#"morphogen/#"#' "$HERE/site.toml" > "$CFG"
-  SITE_CONFIG="$CFG" SITE_ROOT="$SRC" SITE_CONTENT="$HERE/content" SITE_OUT="$OUT" npm run build
-  cat "$HERE/theme.css" >> "$OUT/assets/style.css"
-  cp "$HERE/logo.svg" "$OUT/assets/icon.svg"
-  find "$OUT" -name '*.html' -exec perl -0pi -e '
-    s{<span class="brand-mark" aria-hidden="true">◇</span> Morphogen <span class="brand-sub">research</span>}{<span class="brand-mark" aria-hidden="true">◇</span> OpenReplicant <span class="brand-sub">research</span>};
-    s{(<nav aria-label="Site"><ul>.*?)</ul></nav>}{$1<li><a href="/">openreplicant.com</a></li><li><a href="https://github.com/OpenReplicant/MetaSoar/blob/main/docs/experiments.md">MetaSoar experiments</a></li></ul></nav>}s;
-  ' {} +
-fi
+# The kit has no external navigation, so the two links back to openreplicant.com and to MetaSoar's experiments are
+# added to the header afterwards.
+find "$OUT" -name '*.html' -exec perl -0pi -e '
+  s{(<nav aria-label="Site"><ul>.*?)</ul></nav>}{$1<li><a href="/">openreplicant.com</a></li><li><a href="https://github.com/OpenReplicant/MetaSoar/blob/main/docs/experiments.md">MetaSoar experiments</a></li></ul></nav>}s;
+' {} +
 echo "research site: $OUT (Morphogen $REF)"
