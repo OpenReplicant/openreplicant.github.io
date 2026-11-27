@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contribute | Open Replicant">
+  <section class="hero">
+    <div class="hero__content">
+      <span class="badge badge--open-source">Open source · Apache-2.0</span>
+      <h1>Contribute</h1>
+      <p class="hero__tagline">
+        Morphogen is built in the open. Whether you write code, docs, or just
+        report issues, your contributions make the product better for everyone.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Ways to contribute</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Code</h3>
+        <p>
+          Open issues, submit pull requests, and help improve Morphogen and the
+          knowledge kernel on GitHub. Every slot has a contract — your provider
+          must pass it.
+        </p>
+        <a href="https://github.com/openreplicant/morphogen" class="btn btn--ghost">Browse the repo</a>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Documentation</h3>
+        <p>
+          Improve guides, fix typos, and write tutorials that help new users
+          describe their first system through the design agent interview.
+        </p>
+        <a href="https://github.com/openreplicant/morphogen" class="btn btn--ghost">Edit the docs</a>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Community</h3>
+        <p>
+          Answer questions, review issues, and help shape the roadmap through
+          discussions. The kernel moves to its own repository once a second
+          distribution needs it.
+        </p>
+        <a href="https://github.com/openreplicant/morphogen" class="btn btn--ghost">Join discussions</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h3>Getting started</h3>
+    <p class="small">
+      Check out the README in the Open Replicant GitHub organization for setup
+      instructions, contribution guidelines, and our code of conduct. The
+      knowledge kernel lives under <code>kernel/</code> — every concern is a
+      slot with an interface and a swappable provider.
+    </p>
+    <div class="btn-row">
+      <a href="https://github.com/openreplicant/morphogen" class="btn btn--large">Morphogen on GitHub</a>
+    </div>
+  </section>
+</BaseLayout>

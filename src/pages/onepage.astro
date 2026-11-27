@@ -1,0 +1,272 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Open Replicant" showNavbar={false} pageClass="page--flush">
+  <nav class="navbar onepage-nav">
+    <div class="navbar__brand">
+      <a href="#hero">Open Replicant</a>
+    </div>
+    <div class="navbar__list">
+      <a href="#about">Approach</a>
+      <a href="#product">Product</a>
+      <a href="#services">Services</a>
+      <a href="#saas">SaaS</a>
+      <a href="#contribute">Contribute</a>
+    </div>
+    <a href="https://github.com/openreplicant/morphogen" class="navbar__github" aria-label="Morphogen on GitHub">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C-4.422 18.07 3.183 17.71 3.183 17.71c3.058.61 4.47 1.083 4.47 1.083 3.54 1.124 5.474 2.076 5.474 2.076 3.918 2.636 8.094 1.875 10.06 1.437a10 10 0 0 0 3.786-2.084c.78-1.421 1.402-2.445 1.402-2.445-1.01-.704-2.09-.99-2.09-.99-1.7-.536-4.126-1.246-4.126-1.246-2.12-1.347.244-1.617.244-1.617a4 4 0 0 1 2.758 1.77c.924.262 1.542 1.023 1.542 1.023 1.244 1.774 2.134 1.317 2.652.762a5 5 0 0 0 1.427-1.257c-1.643-.369-3.298-.721-4.947-.92-.681-.206-1.415-.363-2.06-.586C11.48 10.19 10.7 8.84 10.7 8.84c.74-.931 2.44-1.19 2.44-1.19 1.367.335 2.247.732 3.438.732 1.033 0 2.036-.204 2.6-.463.77-.298 1.185-.879 1.185-.879.236-.672.085-1.395-.34-1.777-2.326-.47-5.178-1.367-5.178-1.367-1.341-.917-3.272-1.15-3.272-1.15a1.5 1.5 0 0 1 .86-.984c.453-.235 1.272-.398 2.134-.398 1.268 0 2.16.568 2.16 1.27 0 .43-.045.899-.18 1.267-.575-.1-1.14-.15-1.71-.15-.19 0-.37.025-.55.065a8 8 0 0 1 2.642.194c-.477 1.599-1.598 3.36-3.196 3.36-1.648 0-3.046-1.142-3.046-1.142a2 2 0 0 1 .49-.64c.684-.451 1.29-.75 2.11-.75 1.13 0 2.043.568 2.043 1.27 0 .49-.052.923-.17 1.298.24.272.482.545.728.813C18.69 21.598 18.117 22 17.71 22c-.561 0-1.017-.457-1.017-.457-.383-.52-.748-.985-1.086-1.383-.338-.398-.705-.75-1.086-1.383-.38-.398-.748-.985-1.086-1.383-.338-.398-.705-.75-1.086-1.383-.38-.398-.748-.985-1.086-1.383-.338-.398-.705-.75-1.086-1.383-.38-.398-.748-.985-1.086-1.383-.338-.398-.705-.75-1.086-1.383"/></svg>
+      Morphogen
+    </a>
+  </nav>
+  <main class="page">
+    <!-- Hero -->
+    <section id="hero" class="hero">
+      <div class="splash">
+        <div class="orb orb--a" aria-hidden="true"></div>
+        <div class="orb orb--b" aria-hidden="true"></div>
+      </div>
+      <div class="hero__content">
+        <span class="badge badge--open-source">Open Source AI · Apache-2.0</span>
+        <h1>Open Replicant</h1>
+        <p class="hero__tagline">
+          Infrastructure that manages itself — with you holding the pen. Morphogen
+          watches your systems through a veil of telemetry, proposes each fix
+          with a stated prediction, and carries nothing out until you approve.
+          Then it checks whether the world matched the prophecy.
+        </p>
+        <div class="btn-row">
+          <a href="#product" class="btn btn--large">View the product</a>
+          <a href="#services" class="btn btn--outline btn--large">Hire us</a>
+          <a href="#contribute" class="btn btn--ghost btn--large">Contribute</a>
+          <a href="#saas" class="btn btn--ghost btn--large">SaaS waitlist</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Approach -->
+    <section id="about" class="section">
+      <h2>Our approach</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="card__accent" aria-hidden="true"></span>
+          <h3>Open first</h3>
+          <p>
+            Morphogen is open source (Apache-2.0). Self-host it, inspect the
+            knowledge kernel, extend it. No black boxes, no vendor lock-in. The
+            kernel moves to its own repository once a second distribution needs it.
+          </p>
+        </article>
+        <article class="card">
+          <span class="card__accent" aria-hidden="true"></span>
+          <h3>Governed AI</h3>
+          <p>
+            Model output is only ever a proposal. Six guarantees enforced by the
+            store and checked by a conformance suite — not left to convention.
+            Every claim attributed, referenced, cited. Nothing deleted without a
+            trace. Clearance from people, never models.
+          </p>
+        </article>
+        <article class="card">
+          <span class="card__accent" aria-hidden="true"></span>
+          <h3>Self-managing</h3>
+          <p>
+            Morphogen runs a MAPE-K loop: monitor, analyse, plan, approve, act,
+            verify. It watches your systems, notices drift, and proposes governed
+            changes you can review before they run.
+          </p>
+        </article>
+        <article class="card">
+          <span class="card__accent" aria-hidden="true"></span>
+          <h3>Self-modifying</h3>
+          <p>
+            Gate G2: Morphogen proposes a better version of one of its own
+            parts, builds it, scores it in a sandbox, and waits for your
+            approval. Only when the observed result matches the prediction does
+            it commit — changing itself through its own loop.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Product -->
+    <section id="product" class="section">
+      <h2>The product</h2>
+      <p class="small" style="text-align:center;margin-bottom:3rem;">
+        Morphogen is self-managing AI infrastructure — a system you describe,
+        which builds and manages itself, starting with itself.
+      </p>
+      <div class="grid">
+        <article class="card">
+          <span class="card__accent" aria-hidden="true"></span>
+          <h3>Knowledge kernel</h3>
+          <p>
+            A governed record where model output is only ever a proposal. Every
+            claim attributed (agent and run) and referenced; extracted claims
+            carry the supporting quote. Nothing is deleted — claims are
+            superseded, refuted, or retracted by status.
+          </p>
+        </article>
+        <article class="card">
+          <span class="card__accent" aria-hidden="true"></span>
+          <h3>MAPE-K loop</h3>
+          <p>
+            Monitor telemetry → analyse anomalies → plan with a prediction →
+            human review → act → verify the prediction held. Every step is a
+            swappable slot with a defined contract.
+          </p>
+        </article>
+        <article class="card">
+          <span class="card__accent" aria-hidden="true"></span>
+          <h3>Self-modifying (G2)</h3>
+          <p>
+            Morphogen proposes a change to one of its own providers, builds it,
+            installs it in a sandbox, scores it against the incumbent, and waits
+            for your approval.
+          </p>
+        </article>
+        <article class="card">
+          <span class="card__accent" aria-hidden="true"></span>
+          <h3>Systems it didn't build (G3)</h3>
+          <p>
+            Morphogen maps a real system it did not build — like podinfo with
+            Redis — from its compose file, watches it, and completes one
+            governed change on it.
+          </p>
+        </article>
+        <article class="card">
+          <span class="card__accent" aria-hidden="true"></span>
+          <h3>Review lane</h3>
+          <p>
+            Autonomy level × risk class decides what needs a person's sign-in.
+            Plans show their citations, belief, prediction, and risk. Approved or
+            refused — by a person, as themselves.
+          </p>
+        </article>
+      </div>
+      <div class="btn-row" style="margin-top:2rem;">
+        <a href="https://github.com/openreplicant/morphogen" class="btn btn--large btn--outline">View on GitHub</a>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+      <h2>Consulting &amp; implementation</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="card__accent" aria-hidden="true"></span>
+          <h3>AI strategy &amp; adoption</h3>
+          <p>
+            Assess where Morphogen fits in your infrastructure. Define which
+            systems to describe first. Build a rollout plan tailored to your
+            team's review lane and risk tolerance.
+          </p>
+        </article>
+        <article class="card">
+          <span class="card__accent" aria-hidden="true"></span>
+          <h3>System mapping</h3>
+          <p>
+            We run the design agent with you — an interview becomes a system map,
+            gaps become questions, and a complete map becomes a deployable
+            compose file you approve before anything runs.
+          </p>
+        </article>
+        <article class="card">
+          <span class="card__accent" aria-hidden="true"></span>
+          <h3>Implementation</h3>
+          <p>
+            We deploy and configure Morphogen on your infrastructure, integrate
+            it with your systems, and hand it over ready to run — governed, with
+            people in the loop.
+          </p>
+        </article>
+        <article class="card">
+          <span class="card__accent" aria-hidden="true"></span>
+          <h3>Training &amp; enablement</h3>
+          <p>
+            Hands-on workshops so your engineers can operate, extend, and
+            maintain Morphogen — writing providers, running the loop, and
+            reviewing plans in the UI.
+          </p>
+        </article>
+        <article class="card">
+          <span class="card__accent" aria-hidden="true"></span>
+          <h3>Production support</h3>
+          <p>
+            Ongoing support for teams running Morphogen in production, including
+            upgrades, incident response, and contract conformance against the
+            kernel's 70+ test cases.
+          </p>
+        </article>
+      </div>
+      <div class="btn-row" style="margin-top:2rem;">
+        <a href="mailto:services@openreplicant.example" class="btn btn--large">Contact us</a>
+      </div>
+    </section>
+
+    <!-- SaaS -->
+    <section id="saas" class="section">
+      <div class="warning-banner">
+        Not available yet — join the waitlist to be the first to know when it launches.
+      </div>
+      <h2>SaaS — coming soon</h2>
+      <p class="hero__tagline" style="text-align:center;margin-bottom:2rem;">
+        A fully managed, hosted version of Morphogen is coming soon. Focus on
+        building with self-managing infrastructure — we'll handle the hosting,
+        updates, and ops.
+      </p>
+      <div class="grid">
+        <article class="card">
+          <span class="card__accent" aria-hidden="true"></span>
+          <h3>Managed hosting</h3>
+          <p>We run Morphogen for you — infrastructure, updates, backups, and security handled.</p>
+        </article>
+        <article class="card">
+          <span class="card__accent" aria-hidden="true"></span>
+          <h3>One-click start</h3>
+          <p>Provision an instance in minutes and start describing systems without touching a terminal.</p>
+        </article>
+        <article class="card">
+          <span class="card__accent" aria-hidden="true"></span>
+          <h3>Open source at the core</h3>
+          <p>The SaaS runs the same open source Morphogen. Export your knowledge kernel and self-host anytime — no lock-in.</p>
+        </article>
+      </div>
+      <div class="btn-row" style="margin-top:2rem;">
+        <a href="mailto:waitlist@openreplicant.example" class="btn btn--large">Join the waitlist</a>
+      </div>
+    </section>
+
+    <!-- Contribute -->
+    <section id="contribute" class="section">
+      <h2>Contribute</h2>
+      <p class="hero__tagline" style="text-align:center;margin-bottom:2rem;">
+        Morphogen is built in the open. Whether you write code, docs, or just
+        report issues, your contributions make the product better for everyone.
+      </p>
+      <div class="grid">
+        <article class="card">
+          <span class="card__accent" aria-hidden="true"></span>
+          <h3>Code</h3>
+          <p>Open issues, submit pull requests, and help improve Morphogen and the knowledge kernel on GitHub.</p>
+          <a href="https://github.com/openreplicant/morphogen" class="btn btn--ghost">Browse the repo</a>
+        </article>
+        <article class="card">
+          <span class="card__accent" aria-hidden="true"></span>
+          <h3>Documentation</h3>
+          <p>Improve guides, fix typos, and write tutorials that help new users describe their first system through the design agent interview.</p>
+          <a href="https://github.com/openreplicant/morphogen" class="btn btn--ghost">Edit the docs</a>
+        </article>
+        <article class="card">
+          <span class="card__accent" aria-hidden="true"></span>
+          <h3>Community</h3>
+          <p>Answer questions, review issues, and help shape the roadmap through discussions.</p>
+          <a href="https://github.com/openreplicant/morphogen" class="btn btn--ghost">Join discussions</a>
+        </article>
+      </div>
+      <div class="btn-row" style="margin-top:2rem;">
+        <a href="https://github.com/openreplicant/morphogen" class="btn btn--large">Morphogen on GitHub</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

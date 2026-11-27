@@ -1,7 +1,7 @@
 {
   "name": "website-openreplicant",
   "version": "0.1.0",
-  "description": "Open Replicant website — Astro static site with Alpine.js islands, deployed to GitHub Pages",
+  "description": "Open Replicant website — open source AI product, consulting, and SaaS",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "astro": "^4.16.0",
-    "alpinejs": "^3.14.0"
+    "alpinejs": "^3.14.0",
+    "@astrojs/alpinejs": "^0.4.9"
   }
 }

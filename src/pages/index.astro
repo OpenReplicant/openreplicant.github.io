@@ -4,15 +4,93 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="Home | Open Replicant">
   <section class="hero">
-    <h1>Open Replicant</h1>
-    <p>
-      A static site built with Astro partials and Alpine.js islands, deployed
-      to GitHub Pages.
-    </p>
+    <div class="splash">
+      <div class="orb orb--a" aria-hidden="true"></div>
+      <div class="orb orb--b" aria-hidden="true"></div>
+    </div>
+    <div class="hero__content">
+      <span class="badge badge--open-source">Open Source AI · Apache-2.0</span>
+      <h1>Open Replicant</h1>
+      <p class="hero__tagline">
+        Infrastructure that manages itself — with you holding the pen. Morphogen
+        watches your systems through a veil of telemetry, proposes each fix with
+        a stated prediction, and carries nothing out until you approve. Then it
+        checks whether the world matched the prophecy.
+      </p>
+      <div class="btn-row">
+        <a href="/product/" class="btn btn--large">View the product</a>
+        <a href="/services/" class="btn btn--outline btn--large">Hire us</a>
+        <a href="/contribute/" class="btn btn--ghost btn--large">Contribute</a>
+        <a href="/saas/" class="btn btn--ghost btn--large">SaaS waitlist</a>
+      </div>
+    </div>
   </section>
-  <section class="island-demo" x-data="{ count: 0 }" client:load>
-    <h2>Island counter</h2>
-    <p x-text="count"></p>
-    <button @click="count++" class="btn">Increment</button>
+
+  <section class="section">
+    <h2>What we do</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Open source product</h3>
+        <p>
+          Morphogen is open source AI infrastructure (Apache-2.0). Self-host it.
+          Audit the knowledge kernel. Extend it. The roadmap belongs to the
+          community, not a vendor.
+        </p>
+        <a href="/product/" class="btn btn--ghost">Learn more</a>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Consulting &amp; implementation</h3>
+        <p>
+          We help teams deploy Morphogen in production — from system mapping
+          through rollout and ongoing support. Systems are described, not
+          hand-built. You approve before anything runs.
+        </p>
+        <a href="/services/" class="btn btn--ghost">Learn more</a>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>SaaS coming soon</h3>
+        <p>
+          A managed, hosted Morphogen so you can build, not operate. Join the
+          waitlist for early access — export your kernel and self-host anytime.
+          No lock-in.
+        </p>
+        <a href="/saas/" class="btn btn--ghost">Join waitlist</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 2rem;">
+    <h2>How Morphogen works</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Observe</h3>
+        <p>
+          Telemetry flows into the knowledge kernel as attributed claims. Every
+          observation cites its source, scored for belief. Nothing is assumed;
+          everything is traced.
+        </p>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Analyse</h3>
+        <p>
+          The analyser weighs anomalies against the system map and raises a
+          governed proposal — never a surprise change, never a silent rewrite.
+        </p>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Plan &amp; verify</h3>
+        <p>
+          The planner proposes a fix with a stated prediction. You review and
+          approve in the review lane. After it runs, the verifier checks whether
+          the prediction held. The loop closes with evidence.
+        </p>
+      </article>
+    </div>
   </section>
 </BaseLayout>

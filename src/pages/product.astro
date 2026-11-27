@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Product | Open Replicant">
+  <section class="hero">
+    <div class="hero__content">
+      <span class="badge badge--open-source">Open source · Apache-2.0</span>
+      <h1>Product</h1>
+      <p class="hero__tagline">
+        Morphogen is self-managing AI infrastructure. A system you describe —
+        which builds and manages itself, starting with itself.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>How it works</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Knowledge kernel</h3>
+        <p>
+          A governed record where model output is only ever a proposal. Every
+          claim is attributed (agent and run) and referenced; extracted claims
+          carry the supporting quote. Nothing is deleted — claims are
+          superseded, refuted, or retracted by status.
+        </p>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>MAPE-K loop</h3>
+        <p>
+          Monitor telemetry → analyse anomalies → plan with a prediction →
+          human review → act → verify the prediction held. Every step is a
+          swappable slot with a defined contract. Extensions act before the
+          commit (validate, veto, route) or after it (follow the change feed).
+        </p>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Self-modifying (G2)</h3>
+        <p>
+          Morphogen proposes a change to one of its own providers, builds it,
+          installs it in a sandbox, scores it against the incumbent, and waits
+          for your approval. Only when the observed result matches the
+          prediction does it commit.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>What it manages</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Systems it didn't build (G3)</h3>
+        <p>
+          Morphogen maps a real system it did not build — like podinfo with
+          Redis — from its compose file, watches it, and completes one governed
+          change on it. Every step cites the one before.
+        </p>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Described, not hand-built</h3>
+        <p>
+          An interview becomes a system map. Gaps become questions. A complete
+          map becomes a deployable compose file you approve before anything
+          runs.
+        </p>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Review lane</h3>
+        <p>
+          Autonomy level × risk class decides what needs a person's sign-in.
+          Plans show their citations, belief, prediction, and risk. Approved or
+          refused — by a person, as themselves.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="btn-row">
+      <a href="https://github.com/openreplicant/morphogen" class="btn btn--large btn--outline">View on GitHub</a>
+      <a href="/contribute/" class="btn btn--large">Contribute to the project</a>
+    </div>
+  </section>
+</BaseLayout>

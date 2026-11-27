@@ -5,9 +5,11 @@ import Footer from '../components/Footer.astro';
 
 export interface Frontmatter {
   title: string;
+  showNavbar?: boolean;
+  pageClass?: string;
 }
 
-const { title } = Astro.props;
+const { title, showNavbar = true, pageClass } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -22,8 +24,8 @@ const { title } = Astro.props;
     ></script>
   </head>
   <body>
-    <Navbar />
-    <main class="page"><slot /></main>
+    {showNavbar && <Navbar />}
+    <main class={`page ${pageClass ?? ''}`}><slot /></main>
     <Footer />
   </body>
 </html>
