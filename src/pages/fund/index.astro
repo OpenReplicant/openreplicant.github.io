@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Rules from './_rules.astro';
+import { directions, rate, sponsorsUrl } from '../../data/funds';
+const list = directions();
+---
+<BaseLayout title="Fund a research direction | Open Replicant">
+  <section class="hero">
+    <div class="hero__content">
+      <span class="badge badge--open-source">Open research · Apache-2.0</span>
+      <h1>Fund a research direction</h1>
+      <p class="hero__tagline">
+        Pick a question we have not yet tested and pay for the test. You get the
+        result either way, and refutations are published. Funded directions rise
+        in our research agent's ranking; a fully funded one runs next.
+      </p>
+      <p class="small"><span class="tbd">Payment links TBD: not set up yet</span></p>
+    </div>
+  </section>
+
+  <section class="section" id="directions">
+    <h2>Open directions</h2>
+    <p class="lede">Cost is planned trial hours times <span class="tbd">${rate} / hour (placeholder rate)</span>.</p>
+    <div class="grid">
+      {list.map((d) => (
+        <article class="card">
+          <span class="card__accent" aria-hidden="true"></span>
+          <h3><a href={`/fund/${d.id}/`}>{d.title}</a></h3>
+          <p class="small">{d.question}</p>
+          <div class="meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={d.pct} aria-label={`Funded: ${d.pct}%`}>
+            <span style={`width:${d.pct}%`}></span>
+          </div>
+          <p class="small">
+            ${d.pledged + d.received} of ${d.cost} ({d.pct}%) · {d.hours} h{d.ready ? ' · fully funded, runs next' : ''}
+          </p>
+          <div class="btn-row" style="justify-content: flex-start;">
+            <a href={`/fund/${d.id}/`} class="btn btn--ghost">Read the question</a>
+            <a href={`${sponsorsUrl}?direction=${d.id}`} class="btn btn--ghost">Fund this direction</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <Rules />
+
+  <section class="section narrow center">
+    <h2>Prefer something lighter?</h2>
+    <p class="lede">
+      The Basilisk Indulgence is a joke certificate; the money funds the same research, unearmarked.
+    </p>
+    <div class="btn-row">
+      <a href="/contribute/#indulgence" class="btn btn--ghost">The Indulgence tier</a>
+      <a href="/contribute/" class="btn btn--ghost">Other ways to support</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .meter { height: 0.6rem; border-radius: 0.3rem; background: rgba(255,255,255,0.12); overflow: hidden; margin: 0.75rem 0 0.4rem; }
+  .meter span { display: block; height: 100%; background: var(--cp-accent, #6ee7b7); }
+  .small { color: var(--cp-muted); font-size: 0.9rem; line-height: 1.5; }
+</style>

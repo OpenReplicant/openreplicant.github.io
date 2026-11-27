@@ -1,0 +1,18 @@
+id: wtq-fixed-operations
+title: Fixed table operations, with a model filling the arguments
+status: drafting
+hours: 8
+claims: [E-19, E-18]
+question: >-
+  E-18 found that on real-world tables (WikiTableQuestions) no handler the small model wrote answered any of 450
+  cases. If the operations are fixed in advance (filter, count, sum, compare, dates) and a model only chooses which one
+  and fills in its arguments, can a learned handler answer a real share of such questions without the large model?
+why: >-
+  It is the second try at the handler ladder on data that is not templated. If it fails too, we know the ladder is
+  limited to templated questions, and we say so.
+falsifier: >-
+  The cheap path answers under a set share of cases correctly, or loses accuracy against the large model alone,
+  on fresh WikiTableQuestions cases. The exact thresholds are written in the experiment register before the run.
+plan: >-
+  Finish the operations library and the schema-constrained parser, register the thresholds, then run the stream on
+  Kaggle 2x T4 and publish every case.

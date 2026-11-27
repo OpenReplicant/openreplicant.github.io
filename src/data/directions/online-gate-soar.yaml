@@ -1,0 +1,16 @@
+id: online-gate-soar
+title: Can an escalation gate learn online, from feedback only when it escalates?
+status: registered
+hours: 6
+claims: [E-04d]
+question: >-
+  The gate sees the larger model's outcome only when it escalates. Can Soar 9.6.5's own reinforcement learning learn
+  it that way, over a replay of 1,400 cases, and approach the gate learned offline?
+why: >-
+  "The data comes free with use" is a claim the architecture rests on. Partial feedback is the honest test of it,
+  and it also tells us whether Soar's learning adds anything over a plain table learning the same way.
+falsifier: >-
+  After the replay, accuracy at its own escalation rate on the last half is more than 3 points below the offline
+  gate's; separately, no better than a Python table learning the same way.
+plan: >-
+  Build the Soar container's reward link, replay in five random orders, publish all five.

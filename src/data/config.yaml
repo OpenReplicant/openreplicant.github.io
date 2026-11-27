@@ -1,0 +1,6 @@
+# Placeholder: the owner sets the real rate. Dollars per hour of a trial (compute, plus the time to run and write it up).
+rate_per_hour: 12
+currency: USD
+# Placeholders: none of these accounts exist yet.
+sponsors_url: "#TBD-github-sponsors"
+open_collective_url: "#TBD-open-collective"
