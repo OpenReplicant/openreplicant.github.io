@@ -1,0 +1,20 @@
+id: manager-agent
+title: Can Haiku run the manager, a lean session that only routes and delegates?
+status: proposed
+hours: 8
+claims: [S-223]
+question: >-
+  A manager agent answers the person's messages while worker agents do the long work, and never does the work itself.
+  Does Haiku 5.5 route and delegate about as accurately as Sonnet 5.5 across 43 written scenarios, and does it stay
+  out of the work?
+why: >-
+  A Claude Code session doing long work cannot take new messages until it finishes, so the manager has to be a router
+  with a ledger. The cheap model is worth using only if it is nearly as accurate as the larger one, and the first
+  trial measures that before anything else is built.
+falsifier: >-
+  Haiku's routing and delegation accuracy is more than 5 points below Sonnet's, with the 95% bootstrap interval of the
+  paired difference wholly below zero; or Haiku does the work itself more than once in its replay runs; or Haiku misses
+  more than one of the 14 must-escalate scenarios that Sonnet gets right.
+plan: >-
+  Trial PM-1a only: a replay of the 43 scenarios, three runs per arm, through claude -p with a stub portfolio server
+  that records tool calls and starts nothing. The live run PM-1b waits for the portfolio, supervisor and view to be built.

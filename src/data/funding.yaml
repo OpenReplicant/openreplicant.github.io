@@ -8,3 +8,4 @@ online-gate-soar: { pledged: 0, received: 0, source: "" }
 haiku-opus-cascade: { pledged: 0, received: 0, source: "" }
 retrieval-transfers: { pledged: 0, received: 0, source: "" }
 tableroute-wikitq: { pledged: 0, received: 0, source: "" }
+manager-agent: { pledged: 0, received: 0, source: "" }
