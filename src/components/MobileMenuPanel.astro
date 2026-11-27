@@ -1,0 +1,49 @@
+---
+---
+<!-- Self-contained mobile side-panel menu with Alpine slide-out transitions. -->
+<div x-data="{ open: false }" class="mobile-menu" client:load>
+  <button
+    @click="open = !open"
+    :aria-expanded="open"
+    aria-label="Toggle menu"
+    class="mobile-menu__toggle"
+  >
+    <span class="mobile-menu__bar"></span>
+    <span class="mobile-menu__bar"></span>
+    <span class="mobile-menu__bar"></span>
+  </button>
+
+  <div
+    x-show="open"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="-translate-x-full"
+    x-transition:enter-end="translate-x-0"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="translate-x-0"
+    x-transition:leave-end="-translate-x-full"
+    class="mobile-menu__panel"
+  >
+    <div class="mobile-menu__panel-inner">
+      <button
+        @click="open = false"
+        class="mobile-menu__close"
+      >
+        Close
+      </button>
+      <nav class="mobile-menu__nav">
+        <ul>
+          <li><a href="/" @click="open = false">Home</a></li>
+          <li><a href="/about/" @click="open = false">About</a></li>
+          <li><a href="/product/" @click="open = false">Product</a></li>
+          <li><a href="/services/" @click="open = false">Services</a></li>
+          <li><a href="/saas/" @click="open = false">SaaS</a></li>
+          <li><a href="/contribute/" @click="open = false">Support</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Component styles live alongside global.css utilities. */
+</style>

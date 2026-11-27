@@ -1,0 +1,99 @@
+---
+---
+<!-- ASCII face with cursor-tracking eyes (Alpine island). -->
+<div
+  class="ascii-face"
+  x-data="{
+    mx: 0,
+    my: 0,
+    fx: 0,
+    fy: 0,
+    fw: 0,
+    fh: 0,
+    init() {
+      const el = this.$refs.face
+      const updateRect = () => {
+        const r = el.getBoundingClientRect()
+        this.fx = r.left
+        this.fy = r.top
+        this.fw = r.width
+        this.fh = r.height
+      }
+      updateRect()
+      window.addEventListener('resize', updateRect)
+    },
+    get pupilX() {
+      if (!this.fw) return 0
+      const cx = this.fx + this.fw / 2
+      const dx = this.mx - cx
+      const max = 5
+      return Math.max(-max, Math.min(max, (dx / this.fw) * 20))
+    },
+    get pupilY() {
+      if (!this.fh) return 0
+      const cy = this.fy + this.fh / 2
+      const dy = this.my - cy
+      const max = 5
+      return Math.max(-max, Math.min(max, (dy / this.fh) * 20))
+    }
+  }"
+  @mousemove.window="mx = $event.clientX; my = $event.clientY"
+  client:load
+>
+  <div class="face" x-ref="face">
+    <pre class="face-art">   _______
+  /       \
+ |  ○   ○  |
+ |   △△△   |
+  \  ===  /
+   -------</pre>
+
+    <span
+      class="pupil left"
+      x-bind:style="`transform: translate(${pupilX}px, ${pupilY}px)`"
+    >
+      ●
+    </span>
+    <span
+      class="pupil right"
+      x-bind:style="`transform: translate(${pupilX}px, ${pupilY}px)`"
+    >
+      ●
+    </span>
+  </div>
+</div>
+
+<style>
+  .ascii-face {
+    display: inline-block;
+    position: relative;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    color: var(--ansi-border);
+    margin: 0 auto 1.5rem;
+    text-align: center;
+  }
+  .face-art {
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    white-space: pre;
+    letter-spacing: 0.05em;
+  }
+  .pupil {
+    position: absolute;
+    z-index: 2;
+    font-size: 1.75rem;
+    color: var(--ansi-text);
+    transition: transform 0.06s linear;
+    pointer-events: none;
+  }
+  .pupil.left {
+    left: 4ch;
+    top: 2.4ch;
+  }
+  .pupil.right {
+    left: 8ch;
+    top: 2.4ch;
+  }
+</style>

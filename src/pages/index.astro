@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Home | Open Replicant">
+  <section class="hero">
+    <div class="splash">
+      <div class="orb orb--a" aria-hidden="true"></div>
+      <div class="orb orb--b" aria-hidden="true"></div>
+    </div>
+    <div class="hero__content">
+      <span class="badge badge--open-source">Open source · Apache-2.0</span>
+      <h1>Open Replicant</h1>
+      <p class="hero__tagline">
+        We map how a business and its systems actually work, find where they
+        lose money and time, and turn each finding into a project with a
+        target and a measure. Every change is checked by Morphogen, a judge the
+        optimiser cannot edit, on cases it never saw.
+      </p>
+      <div class="btn-row">
+        <a href="/services/" class="btn btn--large">Mapping for your business</a>
+        <a href="https://github.com/OpenReplicant/Morphogen/blob/main/demos/fernhill/engagement/report.md" class="btn btn--outline btn--large">Read a sample report</a>
+        <a href="/contribute/" class="btn btn--ghost btn--large">Support the research</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>What we do</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Mapping and optimisation</h3>
+        <p>
+          For small and medium businesses: your firm mapped from its own
+          documents, data and people; an opportunity report; implementation
+          projects with targets; results judged against them.
+        </p>
+        <a href="/services/" class="btn btn--ghost">The engagement</a>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Open source tools</h3>
+        <p>
+          Everything we use on client work is on GitHub under Apache-2.0. The
+          map, the scripts and the evidence are files the client keeps.
+        </p>
+        <a href="https://github.com/OpenReplicant" class="btn btn--ghost">OpenReplicant on GitHub</a>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Open research</h3>
+        <p>
+          Agents that learn cheap habits from their own experience, with every
+          experiment registered before it runs and the failures published too.
+          A research agent reads papers into claims, predictions and a queue of
+          tests.
+        </p>
+        <div class="btn-row" style="justify-content: flex-start;">
+          <a href="/contribute/" class="btn btn--ghost">Support it</a>
+          <!-- PLACEHOLDER: point at the research site once its GitHub Pages deploy is enabled. -->
+          <a href="https://github.com/OpenReplicant/Morphogen/tree/main/demos/research-loop" class="btn btn--ghost">The research loop</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 2rem;">
+    <h2>What we build</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Morphogen</h3>
+        <p>
+          The kit: map a system or an organisation, catalogue the options for
+          each part, and optimise behind a judge the optimiser cannot edit.
+          Plain files in Backstage's catalog format; a Claude Code plugin first.
+          Version 0.10.0.
+        </p>
+        <a href="https://github.com/OpenReplicant/Morphogen" class="btn btn--ghost">Morphogen</a>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Knowledge Kernel</h3>
+        <p>
+          Postgres made into a knowledge kernel: every fact cites its source,
+          shows how sure we are, and is reviewed by a person before it counts.
+          An optional layer above Morphogen, for search and graph traversal.
+          Version 0.1.0.
+        </p>
+        <a href="https://github.com/OpenReplicant/kernel" class="btn btn--ghost">Knowledge Kernel</a>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>Substrate</h3>
+        <p>
+          The default distribution: the Knowledge Kernel, Morphogen's plugin, a
+          configured agent harness, a model gateway and local models, brought
+          up on one machine. Preview v0.1.0-preview.1.
+        </p>
+        <a href="https://github.com/OpenReplicant/Substrate" class="btn btn--ghost">Substrate</a>
+      </article>
+      <article class="card">
+        <span class="card__accent" aria-hidden="true"></span>
+        <h3>MetaSoar</h3>
+        <p>
+          The research: a cognitive architecture built on Soar, and a handler
+          ladder that learns cheap policies for recurring situations, each one
+          judged by Morphogen before it is used.
+        </p>
+        <a href="https://github.com/OpenReplicant/MetaSoar" class="btn btn--ghost">MetaSoar</a>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
